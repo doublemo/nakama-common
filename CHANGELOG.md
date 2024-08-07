@@ -4,9 +4,12 @@ All notable changes to this project are documented below.
 The format is based on [keep a changelog](http://keepachangelog.com) and this project uses [semantic versioning](http://semver.org).
 
 ## [Unreleased]
+
+## [1.33.0] - 2024-07-27
 ### Added
 - New runtime functions to get and delete notifications by id.
 - Add runtime function to disable ranks for an active leaderboard.
+- Add new get matchmaker stats API.
 
 ### Changed
 - Add leaderboard and tournament create param to enable or disable ranks.
@@ -245,7 +248,6 @@ The format is based on [keep a changelog](http://keepachangelog.com) and this pr
 ### Changed
 - Remove the older Go Protobuf dependency.
 - The user ID can now be passed into group management functions. If the user ID is empty it will default to the system user as before.
-- Add new get matchmaker stats API.
 
 ### Fixed
 - Small updates to the TypeScript definitions.
