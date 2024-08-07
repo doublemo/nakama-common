@@ -245,6 +245,7 @@ The format is based on [keep a changelog](http://keepachangelog.com) and this pr
 ### Changed
 - Remove the older Go Protobuf dependency.
 - The user ID can now be passed into group management functions. If the user ID is empty it will default to the system user as before.
+- Add new get matchmaker stats API.
 
 ### Fixed
 - Small updates to the TypeScript definitions.
