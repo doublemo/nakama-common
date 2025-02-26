@@ -26,34 +26,9 @@ option go_package = "github.com/doublemo/nakama-common/api";
 
 option java_multiple_files = true;
 option java_outer_classname = "NakamaApi";
-option java_package = "com.doublemo.nakama.api";
+option java_package = "com.heroiclabs.nakama.api";
 
 option csharp_namespace = "Nakama.Protobuf";
-
-message Query {
-  repeated string value = 1; 
-}
-
-message Request {
-  string cid = 1;
-  map<string, string> header = 2;
-  map<string, Query> query = 3;
-  string http_key = 4;
-  string name = 5;
-  oneof body {
-    bytes bytesValue = 6;
-    string stringValue = 7;
-  }
-}
-
-message ResponseWriter {
-  string cid = 1;
-  map<string, string> header = 2;
-  oneof body {
-    bytes bytesValue = 4;
-    string stringValue = 5;
-  }
-}
 
 // A user with additional account details. Always the current user.
 message Account {

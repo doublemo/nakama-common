@@ -22,12 +22,13 @@ package nakama.realtime;
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/wrappers.proto";
 import "api/api.proto";
+import "api/api_any.proto";
 
 option go_package = "github.com/doublemo/nakama-common/rtapi";
 
 option java_multiple_files = true;
 option java_outer_classname = "NakamaRealtime";
-option java_package = "com.doublemo.nakama.rtapi";
+option java_package = "com.heroiclabs.nakama.rtapi";
 
 option csharp_namespace = "Nakama.Protobuf";
 
@@ -133,8 +134,10 @@ message Envelope {
     PartyDataSend party_data_send = 49;
     // Presence update for a particular party.
     PartyPresenceEvent party_presence_event = 50;
-    api.Request request = 51;
-    api.ResponseWriter responseWriter = 52;
+    // Any request
+    api.AnyRequest anyRequest = 51;
+    // Any response
+    api.AnyResponseWriter anyResponseWriter = 52;
   }
 }
 

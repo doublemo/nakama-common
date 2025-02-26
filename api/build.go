@@ -14,4 +14,4 @@
 
 package api
 
-//go:generate protoc -I. --go_out=. --go_opt=paths=source_relative api.proto
+//go:generate protoc -I. --go_out=. --go_opt=paths=source_relative api.proto api_any.proto
