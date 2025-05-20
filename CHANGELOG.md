@@ -5,7 +5,16 @@ The format is based on [keep a changelog](http://keepachangelog.com) and this pr
 
 ## [Unreleased]
 ### Added
+- Add Satori client API to list Flags Overrides.
+
+## [1.36.0] - 2025-01-25
+### Added
 - Add friend metadata support.
+- Extra options to pass through client address to runtime Satori event publishing.
+- Additional runtime Satori authentication function options.
+
+### Changed
+- Update to Protobuf v1.36.4 dependency.
 
 ## [1.35.0] - 2024-11-25
 ### Added
