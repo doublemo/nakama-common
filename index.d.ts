@@ -3405,6 +3405,12 @@ declare namespace nkruntime {
         Group = 3,
     }
 
+
+    export interface LocalCacheOptions {
+      direction?: 'LocalOnly' | 'Peer' | 'MemoryOnly'
+      tags?: string[]
+    }
+
     /**
      * The server APIs available in the game server.
      */
@@ -5172,10 +5178,11 @@ declare namespace nkruntime {
          * Get local cache data by key.
          *
          * @param key - local cache key.
+         * @param options - control the level 2 cache with etcd
          * @throws {TypeError, GoError}
          * @returns local cache object.
          */
-        localcacheGet(key: string): any;
+        localcacheGet(key: string, options?: LocalCacheOptions): any;
 
         /**
          * Put data to local cache.
@@ -5183,24 +5190,27 @@ declare namespace nkruntime {
          * @param key - local cache key.
          * @param value - local cache value.
          * @param ttl - (optional) lifespan of this cache record, in seconds.
+         * @param options - control the level 2 cache with etcd
          * @throws {TypeError, GoError}
          */
-        localcachePut(key: string, value: any, ttl?: number): void;
+        localcachePut(key: string, value: any, ttl?: number, options?: LocalCacheOptions): void;
 
         /**
          * Delete local cache data by key.
          *
          * @param key - local cache key.
+         * @param options - control the level 2 cache with etcd
          * @throws {TypeError, GoError}
          */
-        localcacheDelete(key: string): void;
+        localcacheDelete(key: string, options?: LocalCacheOptions): void;
 
         /**
          * Clears local cache data.
+         * @param options - control the level 2 cache with etcd
          *
          * @throws {TypeError, GoError}
          */
-        localcacheClear(): void;
+        localcacheClear(options?: LocalCacheOptions): void;
 
         /**
          * List entries from an existing configured storage index.
