@@ -5,6 +5,11 @@ The format is based on [keep a changelog](http://keepachangelog.com) and this pr
 
 ## [Unreleased]
 
+## [1.39.2] - 2025-08-14
+### Added
+- Update TypeScript runtime to support the 2 level localcache with etcd
+
+
 ## [1.39.0] - 2025-07-29
 ### Added
 - New "MatchmakerProcessor" hook to set custom matching behaviour tapping into the complete ticket pool.
