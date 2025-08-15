@@ -5183,7 +5183,7 @@ declare namespace nkruntime {
          * @throws {TypeError, GoError}
          * @returns local cache object.
          */
-        localcacheGet(key: string, defaultValue?s: any, options?: LocalCacheOptions): any;
+        localcacheGet(key: string, defaultValue?: any, options?: LocalCacheOptions): any;
 
         /**
          * Put data to local cache.
