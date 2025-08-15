@@ -5,6 +5,10 @@ The format is based on [keep a changelog](http://keepachangelog.com) and this pr
 
 ## [Unreleased]
 
+## [1.39.4] - 2025-08-15
+### Fixed
+- the localcacheGet defaultValue arg is optional
+
 ## [1.39.3] - 2025-08-15
 ### Fixed
 - the localcacheGet signature whose 2nd arg should be default value and options move to 3rd argument
