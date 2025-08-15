@@ -5,6 +5,14 @@ The format is based on [keep a changelog](http://keepachangelog.com) and this pr
 
 ## [Unreleased]
 
+## [1.39.5] - 2025-08-15
+### Fixed
+- the localcacheGet defaultValue arg is optional
+
+## [1.39.3] - 2025-08-15
+### Fixed
+- the localcacheGet signature whose 2nd arg should be default value and options move to 3rd argument
+
 ## [1.39.2] - 2025-08-14
 ### Added
 - Update TypeScript runtime to support the 2 level localcache with etcd
