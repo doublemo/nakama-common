@@ -5,7 +5,7 @@ The format is based on [keep a changelog](http://keepachangelog.com) and this pr
 
 ## [Unreleased]
 
-## [1.39.4] - 2025-08-15
+## [1.39.5] - 2025-08-15
 ### Fixed
 - the localcacheGet defaultValue arg is optional
 
