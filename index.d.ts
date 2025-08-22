@@ -5178,11 +5178,12 @@ declare namespace nkruntime {
          * Get local cache data by key.
          *
          * @param key - local cache key.
+         * @param defaultValue - defaultValue
          * @param options - control the level 2 cache with etcd
          * @throws {TypeError, GoError}
          * @returns local cache object.
          */
-        localcacheGet(key: string, options?: LocalCacheOptions): any;
+        localcacheGet(key: string, defaultValue?: any, options?: LocalCacheOptions): any;
 
         /**
          * Put data to local cache.
