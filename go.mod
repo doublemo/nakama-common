@@ -1,5 +1,5 @@
 module github.com/doublemo/nakama-common
 
-go 1.24.3
+go 1.25.0
 
-require google.golang.org/protobuf v1.36.6
+require google.golang.org/protobuf v1.36.8

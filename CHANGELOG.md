@@ -4,6 +4,12 @@ All notable changes to this project are documented below.
 The format is based on [keep a changelog](http://keepachangelog.com) and this project uses [semantic versioning](http://semver.org).
 
 ## [Unreleased]
+### Fixed
+- Update Satori client types to match latest API spec.
+
+## [1.40.0] - 2025-08-10
+### Fixed
+- Correctly process Satori FlagOverride create times as Unix epoch strings.
 
 ## [1.39.2] - 2025-08-14
 ### Added
