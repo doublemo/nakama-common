@@ -893,6 +893,9 @@ type Initializer interface {
 	// RegisterHttp attaches a new HTTP handler to a specified path on the main client API server endpoint.
 	RegisterHttp(pathPattern string, handler func(http.ResponseWriter, *http.Request), methods ...string) error
 
+	// RegisterConsoleHttp attaches a new HTTP handler to a specified path on the main console API server endpoint.
+	RegisterConsoleHttp(pathPattern string, handler func(http.ResponseWriter, *http.Request), methods ...string) error
+
 	// RegisterBeforeAny can be used to execute additional business logic before invoking the microservice interface.
 	RegisterBeforeAny(fn func(ctx context.Context, logger Logger, db *sql.DB, nk NakamaModule, in *api.AnyRequest) (*api.AnyRequest, error)) error
 

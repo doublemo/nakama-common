@@ -4,6 +4,12 @@ All notable changes to this project are documented below.
 The format is based on [keep a changelog](http://keepachangelog.com) and this project uses [semantic versioning](http://semver.org).
 
 ## [Unreleased]
+### Added
+- New Go runtime initializer function to register raw console HTTP handlers.
+
+### Changed
+- Adjust support for registering Hiro in the runtime.
+
 ## [1.42.1] - 2025-10-17
 ### Fixed
 - Use correct types for Google In-App Purchase subscription response fields.
