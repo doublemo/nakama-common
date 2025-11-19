@@ -4,6 +4,10 @@ All notable changes to this project are documented below.
 The format is based on [keep a changelog](http://keepachangelog.com) and this project uses [semantic versioning](http://semver.org).
 
 ## [Unreleased]
+### Added
+- Add trace identifier to RPC function contexts.
+- Add runtime Satori client feature to send direct messages.
+- Add runtime Satori client option to fetch messages by a set of identifiers.
 
 ## [1.43.0] - 2025-11-09
 ### Added
