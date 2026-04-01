@@ -2,12 +2,21 @@
 All notable changes to this project are documented below.
 
 The format is based on [keep a changelog](http://keepachangelog.com) and this project uses [semantic versioning](http://semver.org).
+## [Unreleased]
 
-## [1.44.0] - 2025-12-05
+### Fixed
+- Add In-App Purchase notification type to JS/Lua callback functions.
+
+
+## [1.44.1] - 2026-01-13
+### Changed
+- Update to Protobuf v1.36.11 dependency.
+- Update to Go toolchain 1.25.5.
+
+## [1.44.0] - 2025-12-02
 ### Changed
 - Update runtime Satori client for new Live Event previous and future iteration options.
 
-## [Unreleased]
 ## [1.43.1] - 2025-11-12
 ### Added
 - Add trace identifier to RPC function contexts.
@@ -27,7 +36,7 @@ The format is based on [keep a changelog](http://keepachangelog.com) and this pr
 ## [1.42.1] - 2025-10-17
 ### Fixed
 - Use correct types for Google In-App Purchase subscription response fields.
-- Use correct type for Apple In-App Purchase application identifier field. 
+- Use correct type for Apple In-App Purchase application identifier field.
 
 ## [1.42.0] - 2025-09-16
 ### Changed

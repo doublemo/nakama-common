@@ -258,69 +258,76 @@ declare namespace nkruntime {
         (ctx: Context, logger: Logger, nk: Nakama): void;
     }
 
+
+    type IAPNotificationType = "SUBSCRIBED" | "RENEWED" | "EXPIRED" | "CANCELLED" | "REFUNDED"
+
     /**
      * Purchase Notification Apple function definition.
      */
     export interface PurchaseNotificationAppleFunction {
-        /**
-         * A Purchase Notification Apple register hook function definition.
-         *
-         * @param ctx - The context for the execution.
-         * @param logger - The server logger.
-         * @param nk - The Nakama server APIs.
-         * @param purchase - The notification purchase.
-         * @param providerPayload - The raw payload of the provider notificaton.
-         */
-        (ctx: Context, logger: Logger, nk: Nakama, purchase: ValidatedPurchase, providerPayload: string): void;
-    }
-
-    /**
+      /**
+       * A Purchase Notification Apple register hook function definition.
+       *
+       * @param ctx - The context for the execution.
+       * @param logger - The server logger.
+       * @param nk - The Nakama server APIs.
+       * @param purchase - The notification purchase.
+       * @param providerPayload - The raw payload of the provider notification.
+       * @param notificationType - The type of notification received.
+       */
+      (ctx: Context, logger: Logger, nk: Nakama, purchase: ValidatedPurchase, providerPayload: string, notificationType: IAPNotificationType): void;
+  }
+   /**
      * Subscription Notification Apple function definition.
      */
-       export interface SubscriptionNotificationAppleFunction {
-        /**
-         * A Subscription Notification Apple register hook function definition.
-         *
-         * @param ctx - The context for the execution.
-         * @param logger - The server logger.
-         * @param nk - The Nakama server APIs.
-         * @param subscription - The notification subscription.
-         * @param providerPayload - The raw payload of the provider notificaton.
-         */
-        (ctx: Context, logger: Logger, nk: Nakama, subscription: ValidatedSubscription, providerPayload: string): void;
-    }
-
+   export interface SubscriptionNotificationAppleFunction {
     /**
-     * Purchase Notification Google function definition.
+     * A Subscription Notification Apple register hook function definition.
+     *
+     * @param ctx - The context for the execution.
+     * @param logger - The server logger.
+     * @param nk - The Nakama server APIs.
+     * @param subscription - The notification subscription.
+     * @param providerPayload - The raw payload of the provider notification.
+     * @param notificationType - The type of notification received.
      */
-    export interface PurchaseNotificationGoogleFunction {
-        /**
-         * A Purchase Notification Google register hook function definition.
-         *
-         * @param ctx - The context for the execution.
-         * @param logger - The server logger.
-         * @param nk - The Nakama server APIs.
-         * @param purchase - The notification purchase.
-         * @param providerPayload - The raw payload of the provider notificaton.
-         */
-        (ctx: Context, logger: Logger, nk: Nakama, purchase: ValidatedPurchase, providerPayload: string): void;
-    }
+    (ctx: Context, logger: Logger, nk: Nakama, subscription: ValidatedSubscription, providerPayload: string, notificationType: IAPNotificationType): void;
+}
 
+/**
+ * Purchase Notification Google function definition.
+ */
+export interface PurchaseNotificationGoogleFunction {
     /**
-     * Subscription Notification Google function definition.
+     * A Purchase Notification Google register hook function definition.
+     *
+     * @param ctx - The context for the execution.
+     * @param logger - The server logger.
+     * @param nk - The Nakama server APIs.
+     * @param purchase - The notification purchase.
+     * @param providerPayload - The raw payload of the provider notification.
+     * @param notificationType - The type of notification received.
      */
-       export interface SubscriptionNotificationGoogleFunction {
-        /**
-         * A Subscription Notification Google register hook function definition.
-         *
-         * @param ctx - The context for the execution.
-         * @param logger - The server logger.
-         * @param nk - The Nakama server APIs.
-         * @param subscription - The notification subscription.
-         * @param providerPayload - The raw payload of the provider notificaton.
-         */
-        (ctx: Context, logger: Logger, nk: Nakama, subscription: ValidatedSubscription, providerPayload: string): void;
-    }
+    (ctx: Context, logger: Logger, nk: Nakama, purchase: ValidatedPurchase, providerPayload: string, notificationType: IAPNotificationType): void;
+}
+
+/**
+ * Subscription Notification Google function definition.
+ */
+   export interface SubscriptionNotificationGoogleFunction {
+    /**
+     * A Subscription Notification Google register hook function definition.
+     *
+     * @param ctx - The context for the execution.
+     * @param logger - The server logger.
+     * @param nk - The Nakama server APIs.
+     * @param subscription - The notification subscription.
+     * @param providerPayload - The raw payload of the provider notification.
+     * @param notificationType - The type of notification received.
+     */
+    (ctx: Context, logger: Logger, nk: Nakama, subscription: ValidatedSubscription, providerPayload: string, notificationType: IAPNotificationType): void;
+}
+
 
     /**
      * Storage Index Filter function definition.
