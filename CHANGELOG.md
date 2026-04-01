@@ -3,7 +3,7 @@ All notable changes to this project are documented below.
 
 The format is based on [keep a changelog](http://keepachangelog.com) and this project uses [semantic versioning](http://semver.org).
 ## [Unreleased]
-
+## [1.45.0] - 2026-03-20
 ### Added
 - Add runtime Satori client feature to delete identities.
 - Add missing "no session" parameter to TypeScript/JavaScript Satori client authentication signature.
@@ -11,9 +11,12 @@ The format is based on [keep a changelog](http://keepachangelog.com) and this pr
 - Add Go runtime function to import an account export snapshot.
 - Add TypeScript/JavaScript runtime function to import an account export snapshot.
 
-### Fixed
-- Add In-App Purchase notification type to JS/Lua callback functions.
+### Changed
+- Update to Go toolchain 1.26.1.
 
+## [1.44.2] - 2026-02-12
+### Fixed
+- Add In-App Purchase notification type to TypeScript/JavaScript runtime callback functions.
 
 ## [1.44.1] - 2026-01-13
 ### Changed
