@@ -7,6 +7,9 @@ The format is based on [keep a changelog](http://keepachangelog.com) and this pr
 ### Added
 - Add runtime Satori client feature to delete identities.
 - Add missing "no session" parameter to TypeScript/JavaScript Satori client authentication signature.
+- Add device identifiers as lookup options for runtime account get operations.
+- Add Go runtime function to import an account export snapshot.
+- Add TypeScript/JavaScript runtime function to import an account export snapshot.
 
 ### Fixed
 - Add In-App Purchase notification type to JS/Lua callback functions.
