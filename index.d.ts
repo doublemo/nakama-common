@@ -5386,7 +5386,7 @@ export interface PurchaseNotificationGoogleFunction {
      * The Satori integration functions.
      */
     export interface Satori {
-        /**
+       /**
          * Create identity.
          *
          * @param id - Identity identifier.
@@ -5395,15 +5395,23 @@ export interface PurchaseNotificationGoogleFunction {
          * @param ipAddress - Opt. Client IP address to pass on to Satori for geo-IP lookup.
          * @throws {TypeError, GoError}
          */
-        authenticate(id: string, properties?: AuthPropertiesUpdate, ipAddress?: string): Properties
+       authenticate(id: string, properties?: AuthPropertiesUpdate, noSession?: boolean, ipAddress?: string): Properties
 
-        /**
-         * Get identity properties.
-         *
-         * @param id - Identity identifier.
-         * @returns The identity properties.
-         * @throws {TypeError, GoError}
-         */
+       /**
+        * Delete an identity and all its associated data.
+        *
+        * @param id - Identity identifier.
+        * @throws {TypeError, GoError}
+        */
+       identityDelete(id: string): void
+
+       /**
+        * Get identity properties.
+        *
+        * @param id - Identity identifier.
+        * @returns The identity properties.
+        * @throws {TypeError, GoError}
+        */
         propertiesGet(id: string): Properties
 
         /**
