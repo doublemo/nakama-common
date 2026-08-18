@@ -3,13 +3,14 @@ All notable changes to this project are documented below.
 
 The format is based on [keep a changelog](http://keepachangelog.com) and this project uses [semantic versioning](http://semver.org).
 ## [Unreleased]
-## [1.46.0] - 2026-05-20
+## [1.46.0] - 2026-07-13
 ### Added
-- Add return value to Fleet Manager Create interface function.
+- Add Samsung Galaxy Store purchase validation request type and `SAMSUNG_GALAXY_STORE` store provider enum.
+- Add Samsung IAP runtime hooks and `PurchaseValidateSamsung` module function.
+- Add `IAPSamsungConfig` to runtime `GetConfig()` IAP section.
 
 ### Changed
-- Update Satori client to match latest API spec.
-- Update to Go toolchain 1.26.3.
+- Update to Go toolchain 1.26.5.
 
 ## [1.45.0] - 2026-03-20
 ### Added
