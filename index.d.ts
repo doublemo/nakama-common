@@ -2310,6 +2310,22 @@ export interface PurchaseNotificationGoogleFunction {
          */
          registerAfterValidatePurchaseHuawei(fn: AfterHookFunction<ValidatePurchaseResponse, ValidatePurchaseHuaweiRequest>): void;
 
+         /**
+         * Register before Hook for RPC ValidatePurchaseSamsung function.
+         *
+         * @param fn - The function to execute before ValidatePurchaseSamsung.
+         * @throws {TypeError}
+         */
+        registerBeforeValidatePurchaseSamsung(fn: BeforeHookFunction<ValidatePurchaseSamsungRequest>): void;
+
+        /**
+         * Register after Hook for RPC ValidatePurchaseSamsung function.
+         *
+         * @param fn - The function to execute after ValidatePurchaseSamsung.
+         * @throws {TypeError}
+         */
+        registerAfterValidatePurchaseSamsung(fn: AfterHookFunction<ValidatePurchaseResponse, ValidatePurchaseSamsungRequest>): void;
+
         /**
          * Register before Hook for RPC ListParties function.
          *
@@ -3209,6 +3225,11 @@ export interface PurchaseNotificationGoogleFunction {
         signature: string
     }
 
+    export interface ValidatePurchaseSamsungRequest {
+        purchaseId: string
+        persist?: boolean
+    }
+
     export interface ListPartiesRequest {
         limit?: number
         open?: boolean
@@ -3224,7 +3245,7 @@ export interface PurchaseNotificationGoogleFunction {
         validatedSubscription: ValidatedSubscription
     }
 
-    export type ValidatedPurchaseStore = "APPLE_APP_STORE" | "GOOGLE_PLAY_STORE" | "HUAWEI_APP_GALLERY"
+    export type ValidatedPurchaseStore = "APPLE_APP_STORE" | "GOOGLE_PLAY_STORE" | "HUAWEI_APP_GALLERY" | "FACEBOOK_INSTANT_STORE" | "SAMSUNG_GALAXY_STORE"
 
     export type ValidatedPurchaseEnvironment = "UNKNOWN" | "SANDBOX" | "PRODUCTION"
 
@@ -3374,6 +3395,10 @@ export interface PurchaseNotificationGoogleFunction {
       public_key: string
       client_id: string
       client_secret: string
+    }
+
+    export interface ConfigIAPSamsung {
+      package_name: string
     }
 
     export interface ConfigGoogleAuth {
@@ -5064,6 +5089,17 @@ export interface PurchaseNotificationGoogleFunction {
          * @throws {TypeError, GoError}
          */
         purchaseValidateFacebookInstant(userID: string, signedRequest: string, persist?: boolean): ValidatePurchaseResponse
+
+        /**
+         * Validate a Samsung Galaxy Store purchase receipt.
+         *
+         * @param userID - User ID.
+         * @param purchaseId - The purchase ID returned by the Samsung IAP SDK PurchaseVo.
+         * @param persist - Opt. Whether to persist the receipt validation. Defaults to true.
+         * @returns The result of the validated and stored purchases from the receipt.
+         * @throws {TypeError, GoError}
+         */
+        purchaseValidateSamsung(userID: string, purchaseId: string, persist?: boolean): ValidatePurchaseResponse
 
         /**
          * Get a validated purchase data by transaction ID.
