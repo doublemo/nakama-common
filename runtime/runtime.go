@@ -1478,9 +1478,10 @@ type ExperimentList struct {
 }
 
 type Experiment struct {
-	Name   string   `json:"name,omitempty"`
-	Value  string   `json:"value,omitempty"`
-	Labels []string `json:"labels,omitempty"`
+	Name      string   `json:"name,omitempty"`
+	Value     string   `json:"value,omitempty"`
+	Labels    []string `json:"labels,omitempty"`
+	FlagNames []string `json:"flag_names,omitempty"`
 }
 
 func (e *Experiment) GetLabels() []string {
@@ -1594,6 +1595,7 @@ type LiveEvent struct {
 	DurationSec        int64           `json:"duration_sec,string,omitempty"`
 	ResetCronExpr      string          `json:"reset_cron,omitempty"`
 	Status             LiveEventStatus `json:"status,omitempty"`
+	FlagNames          []string        `json:"flag_names,omitempty"`
 }
 
 type LiveEventList struct {
