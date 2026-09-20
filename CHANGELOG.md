@@ -3,7 +3,15 @@ All notable changes to this project are documented below.
 
 The format is based on [keep a changelog](http://keepachangelog.com) and this project uses [semantic versioning](http://semver.org).
 ## [Unreleased]
-## [1.46.0] - 2026-07-13
+## [1.48.0] - 2026-09-18
+### Added
+- Interface and function definitions for new authentication provider registration.
+
+### Changed
+- Update to Protobuf v1.36.12 dependency.
+- Update to Go toolchain 1.27.1.
+
+## [1.47.0] - 2026-07-13
 ### Added
 - Add Samsung Galaxy Store purchase validation request type and `SAMSUNG_GALAXY_STORE` store provider enum.
 - Add Samsung IAP runtime hooks and `PurchaseValidateSamsung` module function.
@@ -11,6 +19,14 @@ The format is based on [keep a changelog](http://keepachangelog.com) and this pr
 
 ### Changed
 - Update to Go toolchain 1.26.5.
+
+## [1.46.0] - 2026-05-20
+### Added
+- Add return value to Fleet Manager Create interface function.
+
+### Changed
+- Update Satori client to match latest API spec.
+- Update to Go toolchain 1.26.3.
 
 ## [1.45.0] - 2026-03-20
 ### Added
