@@ -9,6 +9,9 @@ The format is based on [keep a changelog](http://keepachangelog.com) and this pr
 ### Fixed
 - Return RECOVERED for the Google Play subscription recovery event.
 
+### Changed
+- Change the Fleet Manager Init interface to receive the namespace of the instance being registered.
+
 ## [1.48.0] - 2026-09-18
 ### Added
 - Interface and function definitions for new authentication provider registration.
