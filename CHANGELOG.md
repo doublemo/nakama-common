@@ -7,6 +7,7 @@ The format is based on [keep a changelog](http://keepachangelog.com) and this pr
 - Add IAP subscription notification types for grace period and account hold.
 
 ### Fixed
+- Support multiple subscriptions in the IAP provider subscription validation reply.
 - Return RECOVERED for the Google Play subscription recovery event.
 
 ### Changed
