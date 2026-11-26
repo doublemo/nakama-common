@@ -9,6 +9,9 @@ The format is based on [keep a changelog](http://keepachangelog.com) and this pr
 ### Fixed
 - Return RECOVERED for the Google Play subscription recovery event.
 
+### Changed
+- Use buf to generate protocol buffer sources, replacing protoc and go generate.
+
 ## [1.49.0] - 2026-11-03
 ### Added
 - Interface and function definitions for IAP provider registration and generic purchase validation.
