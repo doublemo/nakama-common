@@ -5354,7 +5354,7 @@ export interface PurchaseNotificationGoogleFunction {
          * Get local cache data by key.
          *
          * @param key - local cache key.
-         * @param defaultValue - defaultValue
+         * @param defaultValue - default value returned if the key is not found.
          * @param options - control the level 2 cache with etcd
          * @throws {TypeError, GoError}
          * @returns local cache object.
