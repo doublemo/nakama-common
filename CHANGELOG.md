@@ -12,6 +12,7 @@ The format is based on [keep a changelog](http://keepachangelog.com) and this pr
 - Return RECOVERED for the Google Play subscription recovery event.
 
 ### Changed
+- Allow opting out of email import for Apple, Facebook, and Google authentication and linking.
 - Change the Fleet Manager Init interface to receive the namespace of the instance being registered.
 
 ## [1.48.0] - 2026-09-18

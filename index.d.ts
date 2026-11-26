@@ -424,6 +424,7 @@ export interface PurchaseNotificationGoogleFunction {
         account?: AccountApple
         create?: boolean
         username?: string
+        importEmail?: boolean
     }
 
     export interface AccountCustom {
@@ -472,6 +473,7 @@ export interface PurchaseNotificationGoogleFunction {
         create?: boolean
         username?: string
         sync?: boolean
+        importEmail?: boolean
     }
 
     export interface AccountFacebook {
@@ -515,6 +517,7 @@ export interface PurchaseNotificationGoogleFunction {
         account?: AccountGoogle
         create?: boolean
         username?: string
+        importEmail?: boolean
     }
 
     export interface AccountSteam {
@@ -700,24 +703,25 @@ export interface PurchaseNotificationGoogleFunction {
         vars?: SessionVars
     }
 
-    export interface AccountAppleVarsEntry {
-        key?: string
-        value?: string
-    }
-
     export interface AccountCustom {
         id?: string
         vars?: SessionVars
     }
 
-    export interface AccountCustomVarsEntry {
-        key?: string
-        value?: string
+    export interface LinkAppleRequest {
+        account?: AccountApple
+        importEmail?: boolean
     }
 
     export interface LinkFacebookRequest {
         account?: AccountFacebook
         sync?: boolean
+        importEmail?: boolean
+    }
+
+    export interface LinkGoogleRequest {
+        account?: AccountGoogle
+        importEmail?: boolean
     }
 
     export interface LinkSteamRequest {
@@ -1766,7 +1770,7 @@ export interface PurchaseNotificationGoogleFunction {
          * @param fn - The function to execute before LinkApple.
          * @throws {TypeError}
          */
-        registerBeforeLinkApple(fn: BeforeHookFunction<AccountApple>): void;
+        registerBeforeLinkApple(fn: BeforeHookFunction<LinkAppleRequest>): void;
 
         /**
          * Register after Hook for RPC LinkApple function.
@@ -1774,7 +1778,7 @@ export interface PurchaseNotificationGoogleFunction {
          * @param fn - The function to execute after LinkApple.
          * @throws {TypeError}
          */
-        registerAfterLinkApple(fn: AfterHookFunction<void, AccountApple>): void;
+        registerAfterLinkApple(fn: AfterHookFunction<void, LinkAppleRequest>): void;
 
         /**
          * Register before Hook for RPC LinkCustom function.
@@ -1894,7 +1898,7 @@ export interface PurchaseNotificationGoogleFunction {
          * @param fn - The function to execute before LinkGoogle.
          * @throws {TypeError}
          */
-        registerBeforeLinkGoogle(fn: BeforeHookFunction<AccountGoogle>): void;
+        registerBeforeLinkGoogle(fn: BeforeHookFunction<LinkGoogleRequest>): void;
 
         /**
          * Register after Hook for RPC LinkGoogle function.
@@ -1902,7 +1906,7 @@ export interface PurchaseNotificationGoogleFunction {
          * @param fn - The function to execute after LinkGoogle.
          * @throws {TypeError}
          */
-        registerAfterLinkGoogle(fn: AfterHookFunction<void, AccountGoogle>): void;
+        registerAfterLinkGoogle(fn: AfterHookFunction<void, LinkGoogleRequest>): void;
 
         /**
          * Register before Hook for RPC LinkSteam function.
@@ -3807,10 +3811,11 @@ export interface PurchaseNotificationGoogleFunction {
          * @param token - Apple token.
          * @param username - username. If not provided a random username will be generated.
          * @param create - create user if not exists, defaults to true
+         * @param importEmail - Opt. Import email from Apple account if present and user has no email set, defaults to true.
          * @returns Object with authenticated user data.
          * @throws {TypeError, GoError}
          */
-        authenticateApple(token: string, username?: string, create?: boolean): AuthResult;
+        authenticateApple(token: string, username?: string, create?: boolean, importEmail?: boolean): AuthResult;
 
         /**
          * Authenticate using a custom identifier.
@@ -3853,10 +3858,11 @@ export interface PurchaseNotificationGoogleFunction {
          * @param importFriends - import FB account friends.
          * @param username - username. If not provided a random username will be generated.
          * @param create - create user if not exists, defaults to true
+         * @param importEmail - Opt. Import Facebook email if present and user has no email set. Defaults to true.
          * @returns Object with authenticated user data.
          * @throws {TypeError, GoError}
          */
-        authenticateFacebook(token: string, importFriends?: boolean, username?: string, create?: boolean): AuthResult;
+        authenticateFacebook(token: string, importFriends?: boolean, username?: string, create?: boolean, importEmail?: boolean): AuthResult;
 
         /**
          * Authenticate using Facebook Instant Game.
@@ -3900,10 +3906,11 @@ export interface PurchaseNotificationGoogleFunction {
          * @param token - Google token.
          * @param username - username. If not provided a random username will be generated.
          * @param create - create user if not exists, defaults to true
+         * @param importEmail - Opt. Import Google email if present and user has no email set. Defaults to true.
          * @returns Object with authenticated user data.
          * @throws {TypeError, GoError}
          */
-        authenticateGoogle(token: string, username?: string, create?: boolean): AuthResult;
+        authenticateGoogle(token: string, username?: string, create?: boolean, importEmail?: boolean): AuthResult;
 
         /**
          * Authenticate with Steam account.
@@ -4059,9 +4066,10 @@ export interface PurchaseNotificationGoogleFunction {
          *
          * @param userId - User ID.
          * @param token - Apple sign in token.
+         * @param importEmail - Opt. Import Apple email if present and user has no email set. Defaults to true.
          * @throws {TypeError, GoError}
          */
-        linkApple(userId: string, token: string): void;
+        linkApple(userId: string, token: string, importEmail?: boolean): void;
 
         /**
          * Link an account to a customID.
@@ -4098,9 +4106,10 @@ export interface PurchaseNotificationGoogleFunction {
          * @param username - Username.
          * @param token - Facebook Token.
          * @param importFriends - Import Facebook Friends. Defaults to true.
+         * @param importEmail - Opt. Import Facebook email if present and user has no email set. Defaults to true.
          * @throws {TypeError, GoError}
          */
-        linkFacebook(userId: string, username: string, token: string, importFriends?: boolean): void;
+        linkFacebook(userId: string, username: string, token: string, importFriends?: boolean, importEmail?: boolean): void;
 
         /**
          * Link account to Facebook Instant Games.
@@ -4138,9 +4147,10 @@ export interface PurchaseNotificationGoogleFunction {
          *
          * @param userId - User ID.
          * @param token - Google Token.
+         * @param importEmail - Opt. Import Google email if present and user has no email set. Defaults to true.
          * @throws {TypeError, GoError}
          */
-        linkGoogle(userId: string, token: string): void;
+        linkGoogle(userId: string, token: string, importEmail?: boolean): void;
 
         /**
          * Link account to Steam.
