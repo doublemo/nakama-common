@@ -4,16 +4,25 @@ All notable changes to this project are documented below.
 The format is based on [keep a changelog](http://keepachangelog.com) and this project uses [semantic versioning](http://semver.org).
 ## [Unreleased]
 ### Added
-- Interface and function definitions for IAP provider registration and generic purchase validation.
-- Interface and function definitions for generic subscription validation and IAP provider notifications.
 - Add IAP subscription notification types for grace period and account hold.
 
 ### Fixed
 - Return RECOVERED for the Google Play subscription recovery event.
 
+## [1.49.0] - 2026-11-03
+### Added
+- Interface and function definitions for IAP provider registration and generic purchase validation.
+- Interface and function definitions for generic subscription validation and IAP provider notifications.
+
 ### Changed
-- Allow opting out of email import for Apple, Facebook, and Google authentication and linking.
 - Change the Fleet Manager Init interface to receive the namespace of the instance being registered.
+- Change AuthenticateApple to optionally opt-out from importing the email address from the provider.
+- Change AuthenticateFacebook to optionally opt-out from importing the email address from the provider.
+- Change AuthenticateGoogle to optionally opt-out from importing the email address from the provider.
+- Change LinkApple to optionally opt-out from importing the email address from the provider.
+- Change LinkFacebook to optionally opt-out from importing the email address from the provider.
+- Change LinkGoogle to optionally opt-out from importing the email address from the provider.
+- Update to Go toolchain 1.27.3.
 
 ## [1.48.0] - 2026-09-18
 ### Added
