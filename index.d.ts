@@ -3319,7 +3319,7 @@ export interface PurchaseNotificationGoogleFunction {
         userId: string
         productId: string
         transactionId: string
-        store: ValidatedPurchaseStore
+        store: ValidatedPurchaseStore | `${number}`
         purchaseTime: number
         createTime: number
         updateTime: number
@@ -3327,13 +3327,14 @@ export interface PurchaseNotificationGoogleFunction {
         providerResponse: string
         environment: ValidatedPurchaseEnvironment
         seenBefore: boolean
+        provider?: string
     }
 
     export interface ValidatedSubscription {
         userId: string
         productId: string
         originalTransactionId: string
-        store: ValidatedPurchaseStore
+        store: ValidatedPurchaseStore | `${number}`
         purchaseTime: number
         createTime: number
         updateTime: number
@@ -3343,6 +3344,7 @@ export interface PurchaseNotificationGoogleFunction {
         active: boolean
         providerResponse: string
         providerNotification: string
+        provider?: string
     }
 
     export interface ValidatedPurchaseList {
