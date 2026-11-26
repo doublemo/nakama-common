@@ -3,6 +3,12 @@ All notable changes to this project are documented below.
 
 The format is based on [keep a changelog](http://keepachangelog.com) and this project uses [semantic versioning](http://semver.org).
 ## [Unreleased]
+### Added
+- Add IAP subscription notification types for grace period and account hold.
+
+### Fixed
+- Return RECOVERED for the Google Play subscription recovery event.
+
 ## [1.48.0] - 2026-09-18
 ### Added
 - Interface and function definitions for new authentication provider registration.
